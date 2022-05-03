@@ -4,22 +4,23 @@
 -- Kommentar 3 /*
 
 /* Datenbanken auf Serveranzeigen */
-SHOW DATABASES;
+#SHOW DATABASES;
 
 /* DB Boo löschen, falls vorhanden*/
-DROP DATABASE IF EXISTS boo;
+#DROP DATABASE IF EXISTS boo;
 
 /* DB Boo ANLEGEN; FALLS NOCH NICHT VORHANDEN*/
-CREATE DATABASE IF NOT EXISTS boo;
-
-SHOW DATABASES;
+#CREATE DATABASE IF NOT EXISTS boo;
 
 /* DB auswählen */
 USE boo;
 
-CREATE TABLE test
+DROP TABLE IF EXISTS test;
+
+CREATE TABLE IF NOT EXISTS test
 (
-    name VARCHAR(20),
+    name VARCHAR(20), 
+    fur_color VARCHAR(20),
     age INT
 );
 
@@ -31,8 +32,8 @@ SHOW TABLES;
 DESCRIBE test;
 
 /* ----- Daten ----- */
-INSERT INTO test(name,age) VALUES ("Grizabella", 29);
-INSERT INTO test(age,name) VALUES (35, "Alonzo");
+INSERT INTO test(name,age,fur_color) VALUES ("Grizabella", 29,"orange");
+INSERT INTO test(age,name,fur_color) VALUES (35, "Alonzo","black");
 INSERT INTO test VALUES();
 
 /* ----- Inhalte der Tabelle anzeigen ----- */
