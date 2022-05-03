@@ -19,9 +19,9 @@ DROP TABLE IF EXISTS test;
 
 CREATE TABLE IF NOT EXISTS test
 (
-    name VARCHAR(20), 
-    fur_color VARCHAR(20),
-    age INT
+    name VARCHAR(20) NOT NULL DEFAULT "TBA",
+    fur_color VARCHAR(20) NOT NULL DEFAULT "TBA",
+    age INT NOT NULL DEFAULT 0
 );
 
 
@@ -34,7 +34,7 @@ DESCRIBE test;
 /* ----- Daten ----- */
 INSERT INTO test(name,age,fur_color) VALUES ("Grizabella", 29,"orange");
 INSERT INTO test(age,name,fur_color) VALUES (35, "Alonzo","black");
-INSERT INTO test VALUES();
+INSERT INTO test VALUES ();
 
 /* ----- Inhalte der Tabelle anzeigen ----- */
 SELECT * FROM test;
