@@ -22,5 +22,7 @@ LINES TERMINATED BY "\n"
 IGNORE 1 ROWS
 
 -- Daten in die richtigen Felder sortieren
+(cat_name,fur_color,age)
+;
 
 SELECT * FROM boo.cats;
