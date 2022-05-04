@@ -1,4 +1,4 @@
-/* USER TAB. VERSION 2 */
+/* USER TAB. VERSION 3 */
 
 /* Table users */
 DROP TABLE IF EXISTS boo.users;
