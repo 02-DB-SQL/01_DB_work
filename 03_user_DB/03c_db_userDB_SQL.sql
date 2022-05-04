@@ -17,12 +17,30 @@ DESCRIBE boo.users;
 
 /* Daten */
 INSERT INTO boo.users(userName,firstName,familyName,userPwd)
-VALUES ("max","Max", "Mütze","1234");
+VALUES ("max","Max", "Mütze",SHA1("1234"));
 INSERT INTO boo.users(userName,firstName,familyName,userPwd)
-VALUES ("maxine","Maxine", "Mützerich","#7XD0");
+VALUES ("maxine","Maxine", "Mützerich",SHA1("ff7XD"));
 INSERT INTO boo.users(userName,firstName,familyName,userPwd)
-VALUES ("maxl","Max", "Mützerich","user1234");
+VALUES ("maxl","Max", "Mützerich",SHA1("user1234"));
 
 /* Inhalte : Ergebnistabelle */
 SELECT * FROM boo.users;
+
+/*Änderungen an bestehender Tabelle / Struktur */
+ALTER TABLE
+    boo.users
+ADD
+    userPLZ VARCHAR(5) NOT NULL DEFAULT "00000"
+;
+
+/*Struktur */
+DESCRIBE boo.users;
+
+/*Update von Daten*/
+UPDATE boo.users SET userPLZ = "70367" WHERE id = 1;
+UPDATE boo.users SET userPLZ = "70481" WHERE firstName = "Maxine";
+
+/* Inhalte : Ergebnistabelle */
+SELECT * FROM boo.users;
+
 
