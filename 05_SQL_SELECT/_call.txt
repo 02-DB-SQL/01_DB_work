@@ -1,1 +1,3 @@
 source 05_SQL_SELECT/05_1_persing_csv.sql
+source 05_SQL_SELECT/05_2_que_basics.sql
+source 05_SQL_SELECT/05_3_que_basics.sql
