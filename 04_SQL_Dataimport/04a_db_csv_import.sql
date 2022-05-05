@@ -1,28 +1,15 @@
-/* Datenimport - csv mit ID */
-
-/* Tabelle cats*/
-DROP TABLE IF EXISTS boo.cats;
-
-CREATE TABLE IF NOT EXISTS boo.cats
-(
-    id INT NOT NULL PRIMARY KEY,
-    cat_name VARCHAR(20) NOT NULL,
-    fur_color VARCHAR(20) NOT NULL,
-    age INT NOT NULL
+   age INT NOT NULL
 );
 
 /* Struktur */
-DESCRIBE boo.cats; 
+DESCRIBE boo.cats;
 
--- CSV-Datai parsen
-LOAD DATA LOCAL INFILE "04_SQL_Dataimport/data/cats_export.csv"
+-- CSV-Datei parsen
+LOAD DATA LOCAL INFILE "04_SQL_Dataimportmport/data/cats_export.csv"
 INTO TABLE boo.cats
-FIELDS TERMINATED BY ";"
-LINES TERMINATED BY "\n"
+FIELDS TERMINATED BY ";" 
+LINES TERMINATED BY "\n" 
 IGNORE 1 ROWS
-
--- Daten in die richtigen Felder sortieren
-(cat_name,fur_color,age)
 ;
 
 SELECT * FROM boo.cats;
