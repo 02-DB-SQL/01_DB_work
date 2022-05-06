@@ -33,7 +33,7 @@
 
 -- Eingrenzen/Filtern WHERE & LIKE + Parameter
 -- Unscharfe Suche 
-SELECT
+/*SELECT
 	ticker AS "SYM",
     c_name AS Unternehmen,
 	industry Branche
@@ -64,4 +64,4 @@ FROM stocks.ccc
 
 ORDER BY industry ASC
 LIMIT 40
-;
+; */
