@@ -1,26 +1,38 @@
-CREATE DATABASE IF NOT EXISTS Klausur;
+CREATE DATABASE IF NOT EXISTS products;
 
-use Klausur;
+use products;
 
-DROP TABLE IF EXISTS addressbook;
+DROP TABLE IF EXISTS productlist;
 
-CREATE TABLE IF NOT EXISTS addressbook
+CREATE TABLE IF NOT EXISTS productlist
 (
     ID INT PRIMARY KEY AUTO_INCREMENT,
-    name VARCHAR(45),
-    vorname VARCHAR(45),
-    plz INT,
-    ort VARCHAR(45)
+    product VARCHAR(45),
+    category VARCHAR(45),
+    price DECIMAL(6,2),
+    in_stock INT
     
 );
 
-INSERT INTO addressbook(name,vorname,plz,ort) VALUES ("Müller","Peter",12991,"Berlin");
-INSERT INTO addressbook(name,vorname,plz,ort) VALUES ("Ay","Yildiz",63325,"Langen");
-INSERT INTO addressbook(name,vorname,plz,ort) VALUES ("Sommer","Petra",70137,"Stuttgart");
+INSERT INTO productlist(product,category,price,in_stock)
+VALUES ("DELL XP1","Computer",520.00,200);
+INSERT INTO productlist(product,category,price,in_stock)
+VALUES ("AKOYA ZD217","Computer",430.00,10);
+INSERT INTO productlist(product,category,price,in_stock)
+VALUES ("WD 1020","External Memory",115.00,40);
+INSERT INTO productlist(product,category,price,in_stock)
+VALUES ("CISCO 2050T","Network Components",245.00,10);
 
-SHOW TABLES;
 
-SELECT vorname, name FROM addressbook
+SELECT
+    product AS "Ware",
+    price AS "Preis"
+FROM productlist
 
-WHERE vorname LIKE "Pet__" ;
+WHERE category = "Computer"
+
+ORDER BY price DESC;
+
+
+
 
